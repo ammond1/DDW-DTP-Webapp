@@ -1,96 +1,102 @@
 {% extends 'base.html' %}
 {% block content %}
-<h1>About Our Model</h1>
-<p>Our model makes use of polynormial regression to predict crop production. </p>
-<h1>Our predictors</h1>
-<p>
-    Our model takes in the following features
-</p>
-<ul>
-    <li>Year</li>
-    <li>Average Temperature</li>
-    <li>Average Wind Speed</li>
-    <li>Average Humidity</li>
-    <li>Cloud Cover</li>
-    <li>Precipitation</li>
-    <li>Ocean Heat Content</li>
-    <li>Atmospheric Co2</li>
-    <li>Ocean pH</li>
-    <li>Sea Level</li>
-</ul>
-<h1>Our Model Performance</h1>
-<p>
-    R2 Value: {{r2}} <br>
-    Adjusted R2 Value: {{a_p_r2}}<br>
-    Mean Square Error: {{mse}}<br>
-    Root Mean Square Error: {{rmse}} <br>
-</p>
-<h1>Try it out!</h1>
-<h2>Crop Production: {{pred}}</h2>
+<div class="content-wrapper">
+    <section class="content-section">
+        <p>Our model makes use of polynormial regression to predict crop production. </p>
+        <h1>Our predictors</h1>
+        <p>
+            Our model takes in the following features
+        </p>
+        <ul>
+            <li>Year</li>
+            <li>Average Temperature</li>
+            <li>Average Wind Speed</li>
+            <li>Average Humidity</li>
+            <li>Cloud Cover</li>
+            <li>Precipitation</li>
+            <li>Ocean Heat Content</li>
+            <li>Atmospheric Co2</li>
+            <li>Ocean pH</li>
+            <li>Sea Level</li>
+            <li>Glacier Mass Balance</li>
+            <li>Arctic Sea Ice Extent</li>
+            <li>Antarctic Sea Ice Extent</li>
+        </ul>
+        <h1>Our Model Performance</h1>
+        <p>
+            R2 Value: {{r2}} <br>
+            Adjusted R2 Value: {{a_p_r2}}<br>
+            Mean Square Error: {{mse}}<br>
+            Root Mean Square Error: {{rmse}} <br>
+        </p>
+        <h1>Try it out!</h1>
+    </section>
+</div>
+<h2>Crop Production (MegaTonnes): {{ pred }}</h2>
 <form method = "POST" class="form-container">
     <div class="form-group">
-        <label for= "year">Year</label>
-        <input type="number" id = "year" name="year">
+        <label for="year">Year</label>
+        <input type="number" id = "year" name="year" placeholder="1993">
     </div>
     
     <div class="form-group">
         <label for="temp">Avg. Temp (°C)</label>
-        <input type="number" id="temp" name="temp" step="any">
+        <input type="number" id="temp" name="temp" step="any" placeholder="26.245">
     </div>
 
     <div class="form-group">
         <label for="wind">Avg. Wind Speed (m/s)</label>
-        <input type="number" id="wind" name="wind" step="any">
+        <input type="number" id="wind" name="wind" step="any" placeholder="3.258">
     </div>
 
     <div class="form-group">
         <label for="humidity">Avg. Humidity (%)</label>
-        <input type="number" id="humidity" name="humidity" step="any">
+        <input type="number" id="humidity" name="humidity" step="any" placeholder="58.274">
     </div>
 
     <div class="form-group">
         <label for="cloud">Cloud Cover (%)</label>
-        <input type="number" id="cloud" name="cloud" step="any">
+        <input type="number" id="cloud" name="cloud" step="any" placeholder="47.615">
     </div>
 
     <div class="form-group">
         <label for="precipitation">Precipitation (mm)</label>
-        <input type="number" id="precipitation" name="precipitation" step="any">
+        <input type="number" id="precipitation" name="precipitation" step="any" placeholder="739.68">
     </div>
 
     <div class="form-group">
         <label for="ocean_heat_content">Ocean Heat Content (10²² J)</label>
-        <input type="number" id="ocean_heat_content" name="ocean_heat_content" step="any">
+        <input type="number" id="ocean_heat_content" name="ocean_heat_content" step="any" placeholder="1.360">
     </div>
 
     <div class="form-group">
         <label for="co2">Atmospheric CO₂ (ppm)</label>
-        <input type="number" id="co2" name="co2" step="any">
+        <input type="number" id="co2" name="co2" step="any" placeholder="385.895">
     </div>
 
     <div class="form-group">
         <label for="ocean_ph">Ocean pH (Acidification)</label>
-        <input type="number" id="ocean_ph" name="ocean_ph" step="any">
+        <input type="number" id="ocean_ph" name="ocean_ph" step="any" placeholder="8.151">
     </div>
 
     <div class="form-group">
         <label for="sea_level">Sea Level (cm)</label>
-        <input type="number" id="sea_level" name="sea_level" step="any">
+        <input type="number" id="sea_level" name="sea_level" step="any" placeholder="13.232">
     </div>
 
     <div class="form-group">
         <label for="Glacier">Glacier Mass Balance (Gt)</label>
-        <input type="number" id="Glacier" name="Glacier" step="any">
+        <input type="number" id="Glacier" name="Glacier" step="any" placeholder="-44.997">
     </div>
     
     <div class="form-group">
         <label for="arctic_sea_ice_extent">Arctic Sea Ice Extent (10⁶ km²)</label>
-        <input type="number" id="sarctic_sea_ice_extent" name="sarctic_sea_ice_extent" step="any">
+        <input type="number" id="sarctic_sea_ice_extent" name="sarctic_sea_ice_extent" step="any" placeholder="7.941">
     </div>
 
     <div class="form-group">
         <label for="antarctic_sea_ice_extent">Antarctic Sea Ice Extent (10⁶ km²)</label>
-        <input type="number" id="antarctic_sea_ice_extent" name="antarctic_sea_ice_extent" step="any">
+        <input type="number" id="antarctic_sea_ice_extent" name="antarctic_sea_ice_extent" step="any" placeholder="2.527">
     </div><br>
     <button type="submit">Enter</button>
 </form>
