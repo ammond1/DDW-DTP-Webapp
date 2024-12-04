@@ -1,3 +1,13 @@
+/* General Body Styling */
+body {
+    background-color: #fff8ce;
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+}
+
+/* Navbar */
 .navbar {
     display: flex;
     justify-content: space-around;
@@ -20,61 +30,145 @@
     border-radius: 5px; /* Rounded corners */
 }
 
+/* Full-Screen Image */
 .full-screen {
     position: relative;
     width: 100%;
-    height: 100vh; /* Full viewport height */
+    height: 100vh;
     overflow: hidden;
 }
 
 .full-screen img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ensures the image fills the space without distortion */
-}
-body {
-    background-color:  #fff8ce ;
-    font-family: "Arial", "Helvetica", sans-serif; /* Default font stack */
+    object-fit: cover;
 }
 
+/* Content Section Styling */
+.content-section {
+    max-width: 800px; /* Limit content width for better readability */
+    margin: 20px auto; /* Center content */
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
+    color: #000; /* Text color for readability */
+}
 
+.content-section h1 {
+    color: #444; /* Slightly darker heading color */
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.content-section p {
+    font-size: 1.1rem;
+    text-align: center; /* Justify text for a cleaner look */
+}
+
+.content-section ul {
+    list-style-position: inside;
+    padding-left: 0; /* Removes the default left padding */
+    font-size: 1.1rem;
+    text-align: center; /* Justify text for a cleaner look */
+}
+
+/* Footer Styling */
 footer {
-    background-color: #ffe75c; /* Dark background color */
-    color: black;           /* White text */
-    text-align: left;     /* Center text */
-    padding: 20px;          /* Space around content */
-    font-family: Arial, sans-serif; /* Font style */
-    font-size: 14px;        /* Text size */
-    position: relative;     /* Adjust position if needed */
-    bottom: 0;              /* Align footer to the bottom if it's positioned fixed */
-    width: 100%;            /* Full width */
-    box-sizing: border-box; /* Include padding in width calculation */
+    background-color: #ffe75c;
+    color: black;
+    text-align: center;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 footer a {
-    color: black;            /* Link color */
-    text-decoration: none;  /* Remove underline */
-}
-
-footer a:hover {
-    text-decoration: underline; /* Underline link on hover */
-}
-
-.top{
     color: black;
     text-decoration: none;
 }
 
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Form Container */
 .form-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Two columns */
-    gap: 1.5rem; /* Space between rows and columns */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
+    gap: 1.5rem;
+    padding: 20px;
 }
 
 .form-group {
     display: flex;
     flex-direction: column;
 }
+
 label {
-    margin-bottom: 0.5rem; /* Space between label and field */
+    margin-bottom: 0.5rem;
+}
+
+input[type="number"] {
+    padding: 8px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 100%; /* Full width input */
+}
+
+/* Button Styling */
+button {
+    background-color: #333; /* Dark background for the button */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    font-size: 1.1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 100%; /* Make button stretch to fill the container */
+}
+
+button:hover {
+    background-color: #575757;
+}
+
+/* Optional: Add padding or margin if needed */
+.content-wrapper {
+    background: url('/static/homepageimg.jpg') no-repeat center center; /* Set the background image */
+    background-size: cover; /* Ensure the image covers the content section */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
+    position: relative;
+    padding: 40px 20px; /* Space around the content */
+}
+
+.h1 a:visited {
+    text-decoration: none;
+    color: black;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+    }
+
+    .content-section {
+        padding: 15px;
+    }
+
+    footer {
+        text-align: center;
+        font-size: 12px;
+    }
+
+    /* Make form inputs full-width on small screens */
+    .form-container {
+        grid-template-columns: 1fr; /* Stack form fields */
+    }
 }
